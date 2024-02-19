@@ -6,7 +6,6 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import CustomButton from "components/CustomButton";
 import SearchIcon from '@mui/icons-material/Search';
 import { useSelector } from "react-redux";
-import { ListCart } from "components/listCart";
 import { slugGenerator } from "utils/convert";
 import qs from 'qs';
 import CartButton from "components/CartButton";
@@ -44,17 +43,7 @@ export default function Header() {
 				<div className="2xl:container mx-auto">
 				<div className="border-b">
 					<div className="2xl:container 2xl:mx-auto 2xl:px-0 flex items-center justify-between px-[60px]">
-						{isLogedIn ? (
-							<div className="text-sm z-[100]">Hi <span className="font-bold">{user.fullname}</span></div>
-						) : (
-							<div className="text-sm z-[100]">
-								Hi!{" "}
-								<Link to="/auth/sign-in" className="text-indigo-700 hover:underline hover:text-indigo-800 font-semibold">Sign In</Link>
-								{" "}or{" "}
-								<Link to="/auth/sign-up" className="text-indigo-700 hover:underline hover:text-indigo-800 font-semibold">Sign up</Link>
-							</div>
-						)}
-
+                        <div className="text-sm z-[100]"></div>
 						<div
 							className="order-2 md:order-3 flex items-center"
 							id="nav-content"

@@ -54,16 +54,26 @@ const UserButton = () => {
             <div className="px-4 py-2 shadow-xl border border-[#ccc] rounded-lg">
               <Menu.Item>
                 <React.Fragment>
-				  <Link 
-				  	to="/account/purchase"
-					className="hover:underline text-sm py-2 block hover:text-indigo-700 font-semibold text-gray-700"
-				  >Purchase history</Link>
+
 				  {isLogedIn && (
-					<div 
-						className="hover:underline text-sm py-2 cursor-pointer hover:text-indigo-700 font-semibold text-gray-700"
-						onClick={handleSignOut}
-					>Sign out</div>
+                      <React.Fragment>
+                          <Link to="/auth/sign-in" className="text-indigo-700 hover:underline hover:text-indigo-800 font-semibold">Sign In</Link>
+                          <Link
+                              to="/account/purchase"
+                              className="text-indigo-700 hover:underline hover:text-indigo-800 font-semibold">Profile</Link>
+                          <Link
+                              to="/account/purchase"
+                              className="text-indigo-700 hover:underline hover:text-indigo-800 font-semibold"
+                          >History</Link>
+                      </React.Fragment>
+
 				  )}
+
+                    {!isLogedIn && (
+                        <Link to="/auth/sign-in" className="text-indigo-700 hover:underline hover:text-indigo-800 font-semibold">Sign In</Link>
+                    )}
+
+
                 </React.Fragment>
               </Menu.Item>
             </div>
